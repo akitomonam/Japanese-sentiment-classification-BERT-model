@@ -1,0 +1,9 @@
+datasets
+fugashi[unidic-lite]
+pandas
+numpy
+matplotlib
+neologdn
+scikit-learn
+transformers
+tensorboard # to show logs

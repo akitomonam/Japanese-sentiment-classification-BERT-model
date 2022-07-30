@@ -1,0 +1,28 @@
+version: '3'
+services:
+  jempatheticdialogues_wrime:
+    container_name: JEmpatheticDialogues_WRIME
+    build:
+      context: ..
+      dockerfile: ./docker_env/Dockerfile
+      args:
+        UID: $UID
+        GID: $GID
+        UNAME: $UNAME
+        PROXY: $PROXY
+    # working_dir: '/root/'
+    # runtime: nvidia # gpu
+    volumes:
+      - ..:/workspace
+    ipc: host
+    # ports:
+    #   - "12340:12340"
+
+    tty: true
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [ gpu, utility, compute ]
