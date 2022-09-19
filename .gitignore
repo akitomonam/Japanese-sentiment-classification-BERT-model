@@ -3,3 +3,4 @@ logs
 results
 *model*
 .env
+nohup.out
